@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>毛孩安親班 | 頂級寵物保姆服務 (v3 旗艦版)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#FFFBF5',      /* 溫暖米白 */
+                            primary: '#E76F51', /* 珊瑚橘 */
+                            secondary: '#264653', /* 深青色 */
+                            accent: '#2A9D8F',  /* 綠松石 */
+                            light: '#F4A261'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Gen Jyuu Gothic', 'Microsoft JhengHei', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        /* FAQ 折疊動畫 */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .3s ease-in-out; }
+        @keyframes sweep { 0% {opacity: 0; transform: translateY(-10px)} 100% {opacity: 1; transform: translateY(0)} }
+    </style>
+</head>
+<body class="bg-brand-bg text-gray-700 antialiased font-sans">
+
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="bg-brand-primary text-white w-10 h-10 rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-paw text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-xl text-brand-secondary block leading-none">毛孩安親班</span>
+                        <span class="text-xs text-brand-accent tracking-widest uppercase">Pet Nanny</span>
+                    </div>
+                </div>
+                <div class="hidden lg:flex space-x-8 items-center font-medium text-gray-600">
+                    <a href="#home" class="hover:text-brand-primary transition">首頁</a>
+                    <a href="#safety" class="hover:text-brand-primary transition">安全承諾</a>
+                    <a href="#services" class="hover:text-brand-primary transition">詳細方案</a>
+                    <a href="#team" class="hover:text-brand-primary transition">保姆團隊</a>
+                    <a href="#faq" class="hover:text-brand-primary transition">常見問題</a>
+                    <a href="#reservation" class="bg-brand-secondary text-white px-6 py-2.5 rounded-full hover:bg-gray-700 transition shadow-lg text-sm tracking-wide">立即預約</a>
+                </div>
+                <div class="lg:hidden text-2xl text-gray-600 cursor-pointer">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="pt-32 pb-20 px-4 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-orange-50 -z-10 rounded-bl-[100px] hidden md:block"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2 reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 text-brand-accent text-sm font-bold mb-6 border border-teal-100">
+                    <i class="fa-solid fa-check-circle"></i> 累計服務超過 5,000 小時
+                </div>
+                <h1 class="text-5xl lg:text-6xl font-extrabold text-brand-secondary mb-6 leading-tight">
+                    您忙著照顧生活，<br>我們忙著<span class="text-brand-primary">寵愛您的家人</span>。
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    我們提供全台最高規格的寵物到府保姆服務。不只是餵食與遛狗，更包含<span class="font-bold text-gray-800">行為觀察、健康紀錄與居家安全維護</span>。讓每一次的短暫分離，都變成毛孩期待的假期。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#reservation" class="px-8 py-4 bg-brand-primary text-white font-bold rounded-xl shadow-lg hover:bg-orange-600 transition text-center">
+                        預約初次訪談 (免費)
+                    </a>
+                    <a href="#services" class="px-8 py-4 bg-white text-brand-secondary border border-gray-200 font-bold rounded-xl shadow-sm hover:bg-gray-50 transition text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-magnifying-glass"></i> 查看詳細服務內容
+                    </a>
+                </div>
+                <div class="mt-8 flex items-center gap-4 text-sm text-gray-500">
+                    <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-8 h-8 rounded-full border-2 border-white shadow-sm -mr-4 z-30">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 rounded-full border-2 border-white shadow-sm -mr-4 z-20">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" class="w-8 h-8 rounded-full border-2 border-white shadow-sm z-10">
+                    <span class="ml-2 font-medium">已有 300+ 位飼主加入</span>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative reveal delay-200">
+                <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="專業寵物保姆" 
+                     class="rounded-3xl shadow-2xl w-full object-cover h-[600px] z-10 relative">
+                <div class="absolute bottom-20 -left-10 bg-white p-5 rounded-2xl shadow-xl z-20 hidden md:block animate-bounce" style="animation-duration: 4s;">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-green-100 p-3 rounded-full text-green-600"><i class="fa-solid fa-shield-dog text-2xl"></i></div>
+                        <div>
+                            <p class="text-2xl font-bold text-gray-800">100%</p>
+                            <p class="text-xs text-gray-500 font-bold">無事故紀錄</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="safety" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold text-brand-secondary">安全，是我們唯一的底線</h2>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">我們知道將家門鑰匙交給陌生人需要極大的信任，因此我們建立了業界最嚴格的 6 道安全防線。</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-brand-bg p-8 rounded-2xl hover:-translate-y-1 transition duration-300 border border-orange-100 reveal">
+                    <i class="fa-solid fa-id-card text-4xl text-brand-primary mb-4"></i>
+                    <h3 class="font-bold text-xl mb-3">100% 實名認證與良民證</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">所有保姆皆需提供雙證件實名認證，並每年更新警察刑事紀錄證明（良民證），確保背景單純。</p>
+                </div>
+                <div class="bg-brand-bg p-8 rounded-2xl hover:-translate-y-1 transition duration-300 border border-orange-100 reveal delay-100">
+                    <i class="fa-solid fa-location-dot text-4xl text-brand-primary mb-4"></i>
+                    <h3 class="font-bold text-xl mb-3">GPS 全程軌跡追蹤</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">遛狗服務期間，App 自動開啟 GPS 軌跡紀錄。您可以隨時查看狗狗的散步路線與時間長度。</p>
+                </div>
+                <div class="bg-brand-bg p-8 rounded-2xl hover:-translate-y-1 transition duration-300 border border-orange-100 reveal delay-200">
+                    <i class="fa-solid fa-file-contract text-4xl text-brand-primary mb-4"></i>
+                    <h3 class="font-bold text-xl mb-3">國泰世紀產物保險</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">每筆訂單皆包含寵物意外險（最高賠償 3 萬）與第三人責任險（最高賠償 50 萬）。</p>
+                </div>
+                <div class="bg-brand-bg p-8 rounded-2xl hover:-translate-y-1 transition duration-300 border border-orange-100 reveal">
+                    <i class="fa-solid fa-video text-4xl text-brand-primary mb-4"></i>
+                    <h3 class="font-bold text-xl mb-3">全程攝影回報</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">進門、餵食、清理、玩耍、出門。每個環節都會拍照或錄影，即時傳送至您的 LINE 群組。</p>
+                </div>
+                <div class="bg-brand-bg p-8 rounded-2xl hover:-translate-y-1 transition duration-300 border border-orange-100 reveal delay-100">
+                    <i class="fa-solid fa-key text-4xl text-brand-primary mb-4"></i>
+                    <h3 class="font-bold text-xl mb-3">鑰匙封條管理</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">若需託管鑰匙，我們會使用編號封條密封，並簽署鑰匙保管合約，杜絕任何私自備份的可能。</p>
+                </div>
+                <div class="bg-brand-bg p-8 rounded-2xl hover:-translate-y-1 transition duration-300 border border-orange-100 reveal delay-200">
+                    <i class="fa-solid fa-user-graduate text-4xl text-brand-primary mb-4"></i>
+                    <h3 class="font-bold text-xl mb-3">專業急救證照</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">核心保姆團隊皆持有寵物 CPR 與基礎急救證書，能在第一時間處理突發狀況。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold text-brand-secondary">選擇最適合毛孩的方案</h2>
+                <p class="text-gray-500 mt-4">不確定選哪個？歡迎預約免費諮詢。</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-10">
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg reveal">
+                    <div class="h-48 bg-[url('https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center relative">
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <h3 class="text-3xl font-bold text-white tracking-wide">狗狗散步方案</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-end mb-6 border-b border-gray-100 pb-6">
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">適合：精力旺盛、需要社交的狗狗</p>
+                                <p class="text-3xl font-bold text-brand-primary">NT$ 350 <span class="text-base text-gray-400 font-normal">/ 30分鐘</span></p>
+                            </div>
+                            <div class="bg-orange-100 text-brand-primary px-3 py-1 rounded-lg text-sm font-bold">熱門首選</div>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-gray-600">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> <span><strong>一對一專注陪伴：</strong>保證同一時間只帶您家的狗狗，不混遛。</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> <span><strong>完整生理照顧：</strong>包含撿便、補充飲水、擦拭腳掌與身體。</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> <span><strong>行為觀察：</strong>紀錄排便狀況（軟硬/顏色）與精神狀態。</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> <span><strong>客製化路線：</strong>避開吵雜馬路，選擇公園或草地。</span></li>
+                        </ul>
+                        <a href="#reservation" class="block w-full text-center bg-brand-secondary text-white font-bold py-4 rounded-xl hover:bg-gray-800 transition">預約遛狗</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg reveal delay-100">
+                    <div class="h-48 bg-[url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center relative">
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <h3 class="text-3xl font-bold text-white tracking-wide">貓咪居家照顧</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-end mb-6 border-b border-gray-100 pb-6">
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">適合：貓咪、兔子、行動不便的老犬</p>
+                                <p class="text-3xl font-bold text-brand-accent">NT$ 450 <span class="text-base text-gray-400 font-normal">/ 40分鐘</span></p>
+                            </div>
+                            <div class="bg-teal-100 text-brand-accent px-3 py-1 rounded-lg text-sm font-bold">飼主好評</div>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-gray-600">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-500 mt-1 mr-3"></i> <span><strong>細緻飲食管理：</strong>清洗碗盤、換水、餵食罐頭/乾糧/保健品。</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-500 mt-1 mr-3"></i> <span><strong>環境清潔維護：</strong>清理貓砂盆（全換/補砂）、周邊落砂掃地。</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-500 mt-1 mr-3"></i> <span><strong>高品質陪伴：</strong>逗貓棒玩耍 15 分鐘，或靜態撫摸梳毛。</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-teal-500 mt-1 mr-3"></i> <span><strong>家務加值服務：</strong>幫忙收信、澆花、開關燈（營造有人在家的感覺）。</span></li>
+                        </ul>
+                        <a href="#reservation" class="block w-full text-center bg-brand-accent text-white font-bold py-4 rounded-xl hover:bg-teal-600 transition">預約居家照顧</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="py-20 bg-brand-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold text-brand-secondary">認識您的專屬保姆</h2>
+                <p class="text-gray-500 mt-4">我們不是平台媒合路人，我們是受過訓練的實體團隊。</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center group hover:-translate-y-2 transition duration-300 reveal">
+                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-orange-100">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Sarah 林小姐</h3>
+                    <p class="text-brand-primary text-sm font-bold mb-4">資深遛狗員 / 店長</p>
+                    <p class="text-gray-500 text-sm mb-4">擁有 5 年訓犬經驗，擅長處理容易暴衝的大型犬。家中養了一隻黃金獵犬。</p>
+                    <div class="flex justify-center gap-2 text-xs text-gray-400">
+                        <span class="bg-gray-100 px-2 py-1 rounded">CPR 證照</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded">C 級指導手</span>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center group hover:-translate-y-2 transition duration-300 reveal delay-100">
+                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-teal-100">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Mike 張先生</h3>
+                    <p class="text-brand-accent text-sm font-bold mb-4">貓咪行為專員</p>
+                    <p class="text-gray-500 text-sm mb-4">超級貓奴，擅長與怕生貓咪建立信任。對於餵藥、皮下輸液有豐富經驗。</p>
+                    <div class="flex justify-center gap-2 text-xs text-gray-400">
+                        <span class="bg-gray-100 px-2 py-1 rounded">獸醫助理經歷</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded">貓行為學程</span>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center group hover:-translate-y-2 transition duration-300 reveal delay-200">
+                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-yellow-100">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Emily 陳小姐</h3>
+                    <p class="text-yellow-500 text-sm font-bold mb-4">全方位保姆</p>
+                    <p class="text-gray-500 text-sm mb-4">細心溫柔，特別擅長照顧高齡犬貓。對於飲食備餐非常講究。</p>
+                    <div class="flex justify-center gap-2 text-xs text-gray-400">
+                        <span class="bg-gray-100 px-2 py-1 rounded">寵物營養師</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded">長照經驗</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 text-center mb-12 reveal">
+            <h2 class="text-3xl font-bold text-gray-800">聽聽飼主怎麼說</h2>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 reveal">
+            <div class="bg-gray-50 p-8 rounded-2xl relative">
+                <i class="fa-solid fa-quote-left text-4xl text-gray-200 absolute top-4 left-4"></i>
+                <p class="text-gray-600 mb-6 relative z-10 italic">"上次出國 5 天，最擔心的就是家裡 15 歲的老貓。Mike 每天都傳好多照片影片給我，還幫忙注意到貓咪水喝太少的問題，真的比我自己照顧還細心！"</p>
+                <div class="flex items-center gap-4">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full">
+                    <div>
+                        <p class="font-bold text-gray-900">板橋區 李小姐</p>
+                        <p class="text-xs text-gray-500">飼主 / 15歲 米克斯貓</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 p-8 rounded-2xl relative">
+                <i class="fa-solid fa-quote-left text-4xl text-gray-200 absolute top-4 left-4"></i>
+                <p class="text-gray-600 mb-6 relative z-10 italic">"因為工作常加班，Sarah 幫了我大忙。她不只是遛狗，還教會我家狗狗坐下跟握手，現在狗狗看到她比看到我還開心 (笑)。"</p>
+                <div class="flex items-center gap-4">
+                    <img src="https://randomuser.me/api/portraits/men/88.jpg" class="w-12 h-12 rounded-full">
+                    <div>
+                        <p class="font-bold text-gray-900">中和區 王先生</p>
+                        <p class="text-xs text-gray-500">飼主 / 2歲 柴犬</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-brand-bg">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-brand-secondary mb-12">常見問題與解答</h2>
+            
+            <div class="space-y-4">
+                <details class="group bg-white rounded-xl shadow-sm cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-gray-800 p-6">
+                        <span>Q: 第一次預約需要什麼流程？ (家訪是什麼？)</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-primary"></i></span>
+                    </summary>
+                    <div class="text-gray-600 px-6 pb-6 leading-relaxed">
+                        為了確保雙方權益與寵物安全，首次服務前我們堅持進行免費的「事前家訪」。<br>
+                        保姆會親自到府認識寵物、確認鑰匙位置、清潔用品擺放處，並簽署紙本服務合約。這能讓寵物先熟悉保姆的味道，降低正式服務時的焦慮。
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-gray-800 p-6">
+                        <span>Q: 鑰匙會怎麼保管？安全嗎？</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-primary"></i></span>
+                    </summary>
+                    <div class="text-gray-600 px-6 pb-6 leading-relaxed">
+                        非常安全。若您無法在服務時段在家開門，可將鑰匙託付給我們。我們會將鑰匙裝入專用信封，貼上編號封條，絕不標示您的地址。服務結束後，可選擇掛號寄回或由保姆親自歸還（需預約）。
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-gray-800 p-6">
+                        <span>Q: 如果寵物生病或受傷怎麼辦？</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-primary"></i></span>
+                    </summary>
+                    <div class="text-gray-600 px-6 pb-6 leading-relaxed">
+                        家訪時我們會紀錄您指定的動物醫院。若發生緊急狀況，我們會優先送往該醫院，或最近的 24H 急診，並同時通知您。費用由飼主負擔，但若是保姆疏失造成，將由我們的保險進行理賠。
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-gray-800 p-6">
+                        <span>Q: 過年或連假有加價嗎？</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-primary"></i></span>
+                    </summary>
+                    <div class="text-gray-600 px-6 pb-6 leading-relaxed">
+                        有的，國定假日與春節期間服務費會加收 30% - 50% 不等。建議您在假期前 2 週提早預約，以免向隅。詳細加價表會在家訪時提供給您參考。
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="reservation" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-brand-primary to-orange-600 rounded-[2rem] shadow-2xl p-1">
+                <div class="bg-white rounded-[1.9rem] p-8 md:p-12">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl font-bold text-gray-800">立即預約，給毛孩最好的照顧</h2>
+                        <p class="text-gray-500 mt-2">填寫表單後，我們將由專人致電與您確認家訪時間。</p>
+                    </div>
+                    
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">飼主姓名</label>
+                                <input type="text" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition" placeholder="請輸入全名">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">聯絡電話</label>
+                                <input type="tel" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition" placeholder="09xx-xxx-xxx">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">寵物類型與數量</label>
+                            <input type="text" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition" placeholder="例如：2 隻貓、1 隻大型犬">
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">預計服務日期</label>
+                                <input type="date" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">所在區域</label>
+                                <select class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition">
+                                    <option>板橋區</option>
+                                    <option>中和區</option>
+                                    <option>永和區</option>
+                                    <option>土城區</option>
+                                    <option>其他地區 (需加收車馬費)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">特殊需求備註</label>
+                            <textarea rows="4" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition" placeholder="例如：狗狗有關節問題不能走樓梯、貓咪需要定時餵藥..."></textarea>
+                        </div>
+
+                        <button type="button" onclick="alert('表單已送出！專員將盡快聯繫您。')" class="w-full bg-brand-primary text-white font-bold py-4 rounded-xl shadow-lg hover:bg-orange-700 transition transform hover:-translate-y-1">
+                            送出預約申請
+                        </button>
+                        <p class="text-center text-xs text-gray-400 mt-4">送出即代表同意我們的隱私權政策與服務條款</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-2 mb-4">
+                    <i class="fa-solid fa-paw text-brand-primary text-2xl"></i>
+                    <span class="font-bold text-xl">毛孩安親班</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                    我們是板橋地區評價最高的寵物到府服務團隊。<br>
+                    堅持實名制、堅持全程攝影、堅持把您的毛孩當作家人對待。
+                </p>
+                <div class="mt-6 flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-primary transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-primary transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-primary transition"><i class="fa-brands fa-line"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-lg mb-4">服務項目</h4>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-brand-primary">狗狗散步</a></li>
+                    <li><a href="#" class="hover:text-brand-primary">到府餵貓</a></li>
+                    <li><a href="#" class="hover:text-brand-primary">傷病看護</a></li>
+                    <li><a href="#" class="hover:text-brand-primary">親友住宿媒合</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-4">聯絡資訊</h4>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><i class="fa-solid fa-phone mr-2 text-brand-primary"></i> (02) 2960-1234</li>
+                    <li><i class="fa-solid fa-envelope mr-2 text-brand-primary"></i> hi@petnanny.tw</li>
+                    <li><i class="fa-solid fa-location-dot mr-2 text-brand-primary"></i> 新北市板橋區縣民大道二段</li>
+                    <li class="pt-2 text-xs text-gray-500">營業時間: 週一至週日 09:00 - 21:00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-xs text-gray-500">
+            &copy; 2025 毛孩安親班. All Rights Reserved. 網頁設計作業演示用。
+        </div>
+    </footer>
+
+    <script>
+        // 簡單的捲動顯示動畫
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Init
+    </script>
+</body>
+</html>
